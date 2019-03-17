@@ -12,9 +12,14 @@ class TodoForm extends React.Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    submitTask = e => {
+        this.setState({ item: "" })
+        this.props.addTask(e, this.state.item)
+    }
+
     render() {
         return(
-            <form onSubmit={e => this.props.addTask(e, this.state.item)}>
+            <form onSubmit={this.submitTask}>
                 <input
                     type="text"
                     value={this.state.item}
