@@ -71,8 +71,8 @@ class App extends React.Component {
         />
         <TodoForm
           addTask={this.addTask}
+          clearCompleted={this.clearCompleted}
         />
-        <button onClick={this.clearCompleted}>Clear Completed</button>
       </div>
     );
   }
